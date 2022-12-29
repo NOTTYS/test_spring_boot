@@ -27,7 +27,7 @@ public class CustomerController {
         return cService.getAll();
     }
 
-    @GetMapping("/getId")
+    @GetMapping("/get/{id}")
     public CustomerModel getId(@PathVariable Integer id) {
         return cService.getById(id);
     }
@@ -42,7 +42,7 @@ public class CustomerController {
         return cService.addAll(customer);
     }
 
-    @PutMapping("/put")
+    @PutMapping("/put/{id}")
     public CustomerModel updateOne(@Valid @RequestBody CustomerModel customer, @PathVariable Integer id) {
         return cService.updateOne(customer);
     }
